@@ -1,5 +1,5 @@
 video_filename,event_timestamp_millis
-hand_collission.mp4,2150
-hand_no_collission_1.mp4,-1
-hand_collission_2.mp4,6570
-hand_no_collission_2.mp4,-1
+hand_collision.mp4,2150
+hand_no_collision_1.mp4,-1
+hand_collision_2.mp4,6570
+hand_no_collision_2.mp4,-1
