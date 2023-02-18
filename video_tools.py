@@ -60,7 +60,7 @@ def get_frame_indexes_surrounding_event(video_filepath, event_timestamp_millis, 
 
 # test
 if __name__ == "__main__":
-    video_filepath = 'data/hand_collision_videos/hand_collision.mp4'
+    video_filepath = 'data/hand_collision_videos/videos/hand_collision.mp4'
 
     sample_result = get_frame_indexes_surrounding_event(video_filepath, event_timestamp_millis=1000, sequence_length=6, frame_step=13)
     assert sample_result[0].shape == (3, 6)
@@ -135,7 +135,7 @@ def get_image_frames(video_filepath, frame_index_sequences, format_frame_fn=None
 
 # test
 if __name__ == "__main__":
-    video_filepath = 'data/hand_collision_videos/hand_collision.mp4'
+    video_filepath = 'data/hand_collision_videos/videos/hand_collision.mp4'
 
     result = get_image_frames(video_filepath, [[1,2,3], [2,3,4,5]])
     assert result[0].shape == (3, 720, 1280, 3)
@@ -154,7 +154,7 @@ def get_index_proportion_of_ones(labels, min_proportion_of_ones, max_proportion_
 
 # test
 if __name__ == "__main__":
-    video_filepath = 'data/hand_collision_videos/hand_collision.mp4'
+    video_filepath = 'data/hand_collision_videos/videos/hand_collision.mp4'
     frame_index_sequences, labels = get_frame_indexes_surrounding_event(video_filepath, event_timestamp_millis=1500, sequence_length=7, frame_step=10)
     indexes = get_index_proportion_of_ones(labels, 0.5, 0.8)
 
@@ -179,7 +179,7 @@ def get_frames_surrounding_event(video_filepath, event_timestamp_millis, sequenc
 
 # test
 if __name__ == "__main__":
-    video_filepath = 'data/hand_collision_videos/hand_collision.mp4'
+    video_filepath = 'data/hand_collision_videos/videos/hand_collision.mp4'
     frame_imgs, labels = get_frames_surrounding_event(video_filepath,
                                                       event_timestamp_millis=1500,
                                                       sequence_length=15,
@@ -237,7 +237,7 @@ def get_random_video_frames(video_filepath, seq_length, step_size, num_seqs=1, f
 
 # test
 if __name__ == "__main__":
-    video_filepath = 'data/hand_collision_videos/hand_collision.mp4'
+    video_filepath = 'data/hand_collision_videos/videos/hand_collision.mp4'
     num_seqs = 4
 
     result = get_random_video_frames(video_filepath=video_filepath, seq_length=13, step_size=5, num_seqs=num_seqs)
@@ -297,8 +297,8 @@ class FrameGenerator:
                 
 # test
 if __name__ == "__main__":
-    labels_file_path = './labels.csv'
-    videos_dir_path = './data/hand_collision_videos'
+    labels_file_path = './data/hand_collision_videos/labels.csv'
+    videos_dir_path = './data/hand_collision_videos/videos'
 
     frame_generator = FrameGenerator(videos_dir_path=videos_dir_path, labels_file_path=labels_file_path, sequence_length=15,
                                      frame_step_size=5, min_proportion_of_after_event_frames=0.3, max_proportion_of_after_event_frames=0.8,
