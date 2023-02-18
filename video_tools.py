@@ -245,6 +245,8 @@ if __name__ == "__main__":
 
     print('All tests OK.')
 
+# The generator will generate video frames only from videos listed in the labels file. So you can reuse the same videos dir
+# and just give different labels file containing different video names to achieve train-test dataset split.
 class FrameGenerator:
     def __init__(self, videos_dir_path, labels_file_path, sequence_length, frame_step_size,
                  min_proportion_of_after_event_frames, max_proportion_of_after_event_frames, num_sequences_for_no_event_videos,
